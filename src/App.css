@@ -1,33 +1,114 @@
-.App {
-  text-align: center;
+/* Common */
+
+.clearfix {
+  clear: both;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.lineBreak {
+  padding: .6em 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.margin0 {
+  margin: 0 !important;
+}
+
+/* Input */
+
+input {
+  border-width: 0 0 1px 0;
+  padding: .8em;
+  margin: .8em 0;
+  width: 100%;
+  font-size: 1em;
+  color: #4a4a4a;
+  border-color: #ddd;
+}
+
+input:focus, input:active {
+  outline: none;
+}
+
+input.form-control {
+  margin: 0;
+}
+
+/* Select for image  */
+
+.selectImage .form-group:last-of-type {
+  position: relative;
+}
+
+.selectImage .typeFile input {
+  opacity: 0;
+  display: inline-block;
+  width: 20px;
+  position: absolute;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 9;
+}
+
+.selectImage>div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.selectImage>div .form-group:first-child {
+  width: 95%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.selectImage>div .form-group:last-child {
+  width: 5%;
+  margin: 0 0 0 10px;
+}
+
+.selectImage>div .form-group:last-child .fa {
+  color: #00bcd4;
+}
+
+/* Radio Wrapper */
+
+.radio-wrapper {
+  display: flex;
+}
+
+.radio-wrapper .form-group {
+  width: 100px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.radio-wrapper > label {
+  position: absolute;
+}
+
+/*Button */
+
+.App button {
+  padding: 0.5em 1.5em;
+  margin: 0.5em 0.5em;
+  border-radius: .5em;
+  border: 1px solid transparent;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.primary-button {
+  background-color: #00bcd4;
+  color: #ffffff;
+}
+
+.secondary-button {
+  background-color: #ddd;
+  color: #4a4a4a;
+}
+
+.btn-group {
+  margin: 1em 0;
+}
+
+.btn-group button:last-child {
+  margin-right: 0;
 }

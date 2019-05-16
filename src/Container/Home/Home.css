@@ -1,0 +1,69 @@
+.dropdown-toggle.btn.btn-primary {
+    background-color: transparent;
+    border: 1px solid #00bcd4;
+    color: #00bcd4;
+    padding: 8px 14px;
+}
+
+.dropdown-toggle.btn.btn-primary:after {
+    border: 0;
+    margin: 0;
+}
+
+.dropdown-toggle.btn.btn-primary:focus, .dropdown-toggle.btn.btn-primary:hover, .dropdown-toggle.btn.btn-primary:active {
+    background-color: transparent;
+    border: 1px solid #00bcd4;
+    color: #00bcd4;
+}
+
+.dropdown-menu.show {
+    margin: .4em;
+    padding: .4em;
+}
+
+.dropdown-menu.show a {
+    display: block;
+    padding: .4em;
+    margin: .2em;
+} 
+
+#add:after {
+    content: '';
+}
+
+.main-content form {
+    margin: 40px 0;
+}
+
+.home form {
+    position: relative;
+}
+
+.home form .fa.fa-search {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    color: #00bcd4;
+}
+
+.question-search {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.question-search input {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: .8em 0;
+    display: inline-block;
+}
+
+.search-button {
+    float: right;
+    margin: 4px 10px;
+}
+
+.qs-table tr td:last-child {
+    text-align: center;
+    color: #00bcd4;
+}
