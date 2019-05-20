@@ -29,22 +29,24 @@ class Home extends Component {
         fetch(proxyUrl + targetUrl)
             .then(resp => resp.json()).then(data => {
                 this.setState({
-                    details: data
+                    details: data,
+                    questionData: data
                 })
             })
     }
 
-    editQuestion = (data) => {
+    editQuestion = (data, index) => {
         this.setState({
-            questionData: data
+            questionData: data,
+            index
         });
     }
 
 
     render() {
-        const { questionData } = this.state;
+        const { questionData, details  } = this.state;
 
-        return this.state.details && (
+        return details && (
             <div>
                 <Header />
                 <div className="home container">
@@ -55,14 +57,14 @@ class Home extends Component {
                         className="pull-right">
                         <Link to={{
                             pathname: '/multipleChoice',
-                            state: { questionData: questionData }
+                            state: { questionData }
                         }}>Multiple Choice Questions</Link>
                         <Link to='/qAndA'>Questions & Answers</Link>
                         <Link to='/referenceqandA'>Reference Question & Answers</Link>
                     </DropdownButton>
                     <div className="clearfix"></div>
                     <SearchFormHandler />
-                    <ListViewHandler details={this.state.details} editQuestion={this.editQuestion} questionData={questionData} />
+                    <ListViewHandler details={details} editQuestion={this.editQuestion} questionData={questionData} />
                 </div>
             </div>
         );

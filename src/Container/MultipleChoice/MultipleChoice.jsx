@@ -79,9 +79,10 @@ class MultipleChoice extends Component {
     }
 
     render() {
-        let { universityValues, classValues, subjectValues, chapterValues, typeValues, probabilityValues, answerValues } = this.state;
-        const { res } = this.state;
-        console.log("multiple", res);
+        const { universityValues, classValues, subjectValues, chapterValues, typeValues, probabilityValues, answerValues } = this.state,
+        questionData = this.props.location.state.questionData,
+        { res } = this.state;
+        console.log("multiple jjkjjk", res);
         return (
             <div>
                 <Header />
@@ -107,13 +108,13 @@ class MultipleChoice extends Component {
                         <div className="lineBreak"></div>
                         <div className="row">
                             <div className="col-sm">
-                                <Input dataParse="lowercase" onChangeHandler={this.onChangeHandler} type="text" name="title" placeholder="Enter Title" label="Title" boxClass="form-control" className="margin0" />
+                                <Input value={questionData.Heading} dataParse="lowercase" onChangeHandler={this.onChangeHandler} type="text" name="title" placeholder="Enter Title" label="Title" boxClass="form-control" className="margin0" />
                             </div>
                         </div>
                         <div className="lineBreak"></div>
                         <div className="row">
                             <div className="col-sm">
-                                <TextArea dataParse="lowercase" onChangeHandler={this.onChangeHandler} rows="4" name="question" className="form-control" placeholder="Enter Question" label="Question" />
+                                <TextArea value={questionData.QuestionText} dataParse="lowercase" onChangeHandler={this.onChangeHandler} rows="4" name="question" className="form-control" placeholder="Enter Question" label="Question" />
                             </div>
                         </div>
                         <div className="lineBreak"></div>
@@ -122,7 +123,7 @@ class MultipleChoice extends Component {
                                 <Select name="type" dataParse="dropdown" options={typeValues} label="Type" />
                             </div>
                             <div className="col-sm-3">
-                                <Input dataParse="lowercase" onChangeHandler={this.onChangeHandler} name="points" type="text" placeholder="Enter Points" label="Points" boxClass="form-control" className="margin0" />
+                                <Input value={questionData.Points} dataParse="lowercase" onChangeHandler={this.onChangeHandler} name="points" type="text" placeholder="Enter Points" label="Points" boxClass="form-control" className="margin0" />
                             </div>
                             <div className="col-sm-6  radio-wrapper">
                                 <label>Probability</label>
@@ -134,22 +135,22 @@ class MultipleChoice extends Component {
                         <div className="lineBreak"></div>
                         <div className="row selectImage">
                             <div className="col-sm">
-                                <Input id="file-upload-filename" type="text" placeholder="Enter Option1" label="Option1" boxClass="form-control" className="margin0" />
+                                <Input value={questionData.Option1} id="file-upload-filename" type="text" placeholder="Enter Option1" label="Option1" boxClass="form-control" className="margin0" />
                                 <Input type="file" boxClass="image" onChangeHandler={(e) => this.onChangeHandler(e)} className="typeFile" id="imageUpload" accept="image/*" text="imageUpload" label={<i className="fa fa-file-image-o"></i>} />
                             </div>
                             <div className="col-sm">
-                                <Input type="text" placeholder="Enter Option2" label="Option2" boxClass="form-control" className="margin0" />
+                                <Input value={questionData.Option2} type="text" placeholder="Enter Option2" label="Option2" boxClass="form-control" className="margin0" />
                                 <Input type="file" boxClass="image" onChangeHandler={(e) => this.onChangeHandler(e)} className="typeFile" id="imageUpload" accept="image/*" text="imageUpload" label={<i className="fa fa-file-image-o"></i>} />
                             </div>
                         </div>
                         <div className="lineBreak"></div>
                         <div className="row selectImage">
                             <div className="col-sm">
-                                <Input type="text" placeholder="Enter Option3" label="Option3" boxClass="form-control" className="margin0" />
+                                <Input value={questionData.Option3} type="text" placeholder="Enter Option3" label="Option3" boxClass="form-control" className="margin0" />
                                 <Input type="file" boxClass="image" onChangeHandler={(e) => this.onChangeHandler(e)} className="typeFile" id="imageUpload" accept="image/*" text="imageUpload" label={<i className="fa fa-file-image-o"></i>} />
                             </div>
                             <div className="col-sm">
-                                <Input type="text" placeholder="Enter Option4" label="Option4" boxClass="form-control" className="margin0" />
+                                <Input value={questionData.Option4} type="text" placeholder="Enter Option4" label="Option4" boxClass="form-control" className="margin0" />
                                 <Input type="file" boxClass="image" onChangeHandler={(e) => this.onChangeHandler(e)} className="typeFile" id="imageUpload" accept="image/*" text="imageUpload" label={<i className="fa fa-file-image-o"></i>} />
                             </div>
                         </div>
