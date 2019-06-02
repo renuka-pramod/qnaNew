@@ -56,10 +56,20 @@ class MultipleChoice extends Component {
                 data.set(name, parsedValue);
             }
         }
-        fetch('http://myhistoryclass.co.in/sch/api/Questions/InsertQuestion', {
+
+        let proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+            targetUrl = 'http://myhistoryclass.co.in/sch/api/Questions/InsertQuestion'
+
+        fetch((proxyUrl + targetUrl), {
             method: 'POST',
-            body: data,
-        });
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+              }
+        }).then(resp => resp.json()).then(data => {
+            console.log("Post Response : "+ JSON.stringify(data))
+        })
 
         this.setState({
             res: this.stringifyFormData(data),
